@@ -159,6 +159,13 @@ a {
 
   .item {
     outline: none;
+    position: relative;
+
+    &:hover {
+      .download {
+        display: flex;
+      }
+    }
 
     .icon {
       min-height: 64px;
@@ -171,6 +178,30 @@ a {
         0 1px 2px 0 rgba(0, 0, 0, 0.06);
       border: 2px solid transparent;
       font-size: 1.6em;
+    }
+
+    .download {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 28px;
+      height: 28px;
+      background: #ddd;
+      justify-content: center;
+      align-items: center;
+      border-top-left-radius: var(--border-radius-md);
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        svg {
+          color: #3b82f6;
+        }
+      }
     }
 
     &:hover {
